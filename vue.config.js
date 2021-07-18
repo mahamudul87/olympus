@@ -1,7 +1,9 @@
 const path = require('path')
 
 module.exports = {
-  publicPath: "olympus-pages",
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/olympus/'
+    : '/',
     configureWebpack: {
         resolve: {
           alias: {
@@ -9,4 +11,5 @@ module.exports = {
           }
         }
     },
+    
 }
